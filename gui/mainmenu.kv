@@ -1,0 +1,38 @@
+<SideMenuButton@Button>:
+    on_press: mainMenuButtonPressed(self.text)
+<CreateButton@SideMenuButton>:
+    text: "Create"
+<MaintainButton@SideMenuButton>:
+    text: "Maintain"
+<PlayButton@SideMenuButton>:
+    text: "Play"
+<GMButton@SideMenuButton>:
+    text: "GameMaster"
+<ToolsButton@SideMenuButton>:
+    text: "Tools"
+<AboutButton@SideMenuButton>:
+    text: "About"
+<SideMenu@BoxLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        CreateButton:
+        MaintainButton:
+        PlayButton:
+        GMButton:
+        ToolsButton:
+        AboutButton:
+
+<Desktop>:
+    BoxLayout:
+        pos: root.pos
+        size: root.size
+        SideMenu:
+            size_hint: 0.3,1
+        Image:
+            size_hint: 0.7,1
+            source: "img/logo.png"
+
+<Mobile>:
+    SideMenu:
+        pos: root.pos
+        size: root.size
