@@ -9,6 +9,7 @@ __pycache__/
 .Python
 env/
 build/
+bin/
 develop-eggs/
 dist/
 downloads/
@@ -55,3 +56,6 @@ target/
 
 #Kivy
 kivy/
+
+#Buildozer
+.buildozer

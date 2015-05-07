@@ -1,4 +1,4 @@
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 import kivy
 kivy.require("1.9.0")
 
@@ -9,10 +9,10 @@ from kivy.lang import Builder
 from gui import MainMenu
 from gui import GUIHandler
 
-#import gettext
-#en = gettext.translation("en",localedir="locale",languages=["en"])
-#de = gettext.translation("de",localedir="locale",languages=["de"])
-#de.install()
+import gettext
+en = gettext.translation("en",localedir="locale",languages=["en"])
+de = gettext.translation("de",localedir="locale",languages=["de"])
+en.install()
 
 class ChumPyApp(App):
     def buttonPressed(*args):
