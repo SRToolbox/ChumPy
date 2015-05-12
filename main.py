@@ -12,6 +12,7 @@ from gui.eventhandler import ButtonHandler
 from gui.screenmanager import ScreenManager
 
 class ChumPyApp(App):
+    ScreenManager = ScreenManager()
 
     def buttonPressed(*args):
         ButtonHandler.buttonPressed(*args)

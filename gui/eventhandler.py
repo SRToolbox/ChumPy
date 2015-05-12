@@ -2,29 +2,27 @@ import util
 from gui import strings
 from kivy.logger import Logger
 class ButtonHandler:
-    @staticmethod
     def buttonPressed(app, origin, button):
-        appReference = app
-        ButtonHandler.mappings[button]()
+        ButtonHandler.mappings[button](app)
         pass
 
-    def CreateButtonPressed():
+    def CreateButtonPressed(app):
         pass
 
-    def MaintainButtonPressed():
+    def MaintainButtonPressed(app):
         pass
 
-    def PlayButtonPressed():
+    def PlayButtonPressed(app):
         pass
 
-    def GameMasterButtonPressed():
+    def GameMasterButtonPressed(app):
         pass
 
-    def ToolsButtonPressed():
+    def ToolsButtonPressed(app):
         pass
 
-    def AboutButtonPressed():
-        #appReference.UIManager.OpenAbout()
+    def AboutButtonPressed(app):
+        app.ScreenManager.switchTo(strings.about)
 
     mappings = {
         strings.create:CreateButtonPressed,
