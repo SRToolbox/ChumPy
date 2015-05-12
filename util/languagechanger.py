@@ -1,12 +1,11 @@
 import gettext
-class Change():
-
+class LanguageChanger():
     @staticmethod
-    def DE():
+    def SetDE():
         de = gettext.translation("de",localedir="locale",languages=["de"])
         de.install()
 
     @staticmethod
-    def EN():
+    def SetEN():
         en = gettext.translation("en",localedir="locale",languages=["en"])
         en.install()

@@ -2,32 +2,28 @@ __version__ = "0.0.4"
 import kivy
 kivy.require("1.9.0")
 import util
-
+from util.languagechanger import LanguageChanger
+from kivy import platform
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy import platform
-from kivy.lang import Builder
-from gui import MainMenu
-from gui import GUIHandler
-from util import Language
+import gui
+from gui.mainmenu import MainMenu
+from gui.eventhandler import ButtonHandler
+from gui.screenmanager import ScreenManager
 
 class ChumPyApp(App):
-    def buttonPressed(*args):
-        GUIHandler.Button.buttonPressed(*args)
 
-    def loadKVfiles(self):
-        Builder.load_file("gui/mainmenu.kv")
+    def buttonPressed(*args):
+        ButtonHandler.buttonPressed(*args)
+
+    def initializeScreenManager(self):
+        ScreenManager.registerScreen(MainMenu(name=gui.strings.mainmenu))
+        ScreenManager.switchTo(gui.strings.mainmenu)
 
     def build(self):
-        Language.Change.EN()
-        self.loadKVfiles()
-        #platform is either win, linux, android, macosx or unknown
-        if platform == 'android':
-            ui = MainMenu.Mobile()
-        else:
-            ui = MainMenu.Desktop()
-        return ui
-
+        LanguageChanger.SetEN()
+        self.initializeScreenManager()
+        return ScreenManager.getManager()
 
 if __name__ == "__main__":
     ChumPyApp().run()
