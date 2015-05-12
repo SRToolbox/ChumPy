@@ -9,7 +9,7 @@ from kivy import platform
 from kivy.lang import Builder
 from gui import MainMenu
 from gui import GUIHandler
-from util import LanguageManager
+from util import Language
 
 class ChumPyApp(App):
     def buttonPressed(*args):
@@ -19,7 +19,7 @@ class ChumPyApp(App):
         Builder.load_file("gui/mainmenu.kv")
 
     def build(self):
-        LanguageManager.Changer.switchDE()
+        Language.Change.DE()
         self.loadKVfiles()
         #platform is either win, linux, android, macosx or unknown
         if platform == 'android':
