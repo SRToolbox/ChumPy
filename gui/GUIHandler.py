@@ -1,8 +1,4 @@
-import gettext
-en = gettext.translation("en",localedir="locale",languages=["en"])
-de = gettext.translation("de",localedir="locale",languages=["de"])
-en.install()
-
+import util
 class Button:
 
     @staticmethod
