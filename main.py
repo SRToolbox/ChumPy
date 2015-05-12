@@ -8,6 +8,7 @@ from kivy.app import App
 from kivy.uix.widget import Widget
 import gui
 from gui.mainmenu import MainMenu
+from gui.about import About
 from gui.eventhandler import ButtonHandler
 from gui.screenmanager import ScreenManager
 
@@ -19,6 +20,7 @@ class ChumPyApp(App):
 
     def initializeScreenManager(self):
         ScreenManager.registerScreen(MainMenu(name=gui.strings.mainmenu))
+        ScreenManager.registerScreen(About(name=gui.strings.about))
         ScreenManager.switchTo(gui.strings.mainmenu)
 
     def build(self):

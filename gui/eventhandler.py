@@ -24,6 +24,9 @@ class ButtonHandler:
     def AboutButtonPressed(app):
         app.ScreenManager.switchTo(strings.about)
 
+    def BackButtonPressed(app):
+        app.ScreenManager.switchToLast()
+
     mappings = {
         strings.create:CreateButtonPressed,
         strings.maintain:MaintainButtonPressed,
@@ -31,4 +34,5 @@ class ButtonHandler:
         strings.gamemaster:GameMasterButtonPressed,
         strings.tools:ToolsButtonPressed,
         strings.about:AboutButtonPressed,
+        strings.back:BackButtonPressed,
     }
