@@ -1,10 +1,10 @@
 import util
+from gui.strings import mainmenu
+from kivy.logger import Logger
 class Button:
 
     @staticmethod
-    def buttonPressed(*args):
-        origin = args[1]
-        button = args[2]
+    def buttonPressed(app, origin, button):
         Button.mappings[button]()
         pass
 
@@ -27,10 +27,10 @@ class Button:
         pass
 
     mappings = {
-        _("Create"):CreateButtonPressed,
-        _("Maintain"):MaintainButtonPressed,
-        _("Play"):PlayButtonPressed,
-        _("GameMaster"):GameMasterButtonPressed,
-        _("Tools"):ToolsButtonPressed,
-        _("About"):AboutButtonPressed,
+        mainmenu.create:CreateButtonPressed,
+        mainmenu.maintain:MaintainButtonPressed,
+        mainmenu.play:PlayButtonPressed,
+        mainmenu.gamemaster:GameMasterButtonPressed,
+        mainmenu.tools:ToolsButtonPressed,
+        mainmenu.about:AboutButtonPressed,
     }

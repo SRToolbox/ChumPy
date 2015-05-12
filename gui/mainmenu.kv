@@ -1,16 +1,23 @@
+#:import mainmenu gui.strings.mainmenu
 <SideMenuButton@Button>:
-    on_press: app.buttonPressed("mainmenu",self.text)
+    on_press: app.buttonPressed(mainmenu.mainmenu,self.tag)
 <CreateButton@SideMenuButton>:
+    tag: mainmenu.create
     text: _("Create")
 <MaintainButton@SideMenuButton>:
+    tag: mainmenu.maintain
     text: _("Maintain")
 <PlayButton@SideMenuButton>:
+    tag: mainmenu.play
     text: _("Play")
 <GMButton@SideMenuButton>:
+    tag: mainmenu.gamemaster
     text: _("GameMaster")
 <ToolsButton@SideMenuButton>:
+    tag: mainmenu.tools
     text: _("Tools")
 <AboutButton@SideMenuButton>:
+    tag: mainmenu.about
     text: _("About")
 <SideMenu@BoxLayout>:
     BoxLayout:

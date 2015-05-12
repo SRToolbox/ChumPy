@@ -19,7 +19,7 @@ class ChumPyApp(App):
         Builder.load_file("gui/mainmenu.kv")
 
     def build(self):
-        Language.Change.DE()
+        Language.Change.EN()
         self.loadKVfiles()
         #platform is either win, linux, android, macosx or unknown
         if platform == 'android':
