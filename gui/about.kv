@@ -1,0 +1,25 @@
+#:import strings gui.strings
+<AboutMenuButton@Button>:
+    on_press: app.buttonPressed(strings.about,self.tag)
+<BackButton@AboutMenuButton>:
+    tag: strings.back
+    text: _("Back")
+<ChangeLanguageButton@AboutMenuButton>:
+    tag: string.changeLanguage
+    text: _("ChangeLanguage")
+
+<TopMenu@BoxLayout>:
+    BoxLayout:
+        orientation: "horizontal"
+        BackButton:
+            size_hint: 0.3,1
+
+<About>:
+    BoxLayout:
+        pos: root.pos
+        size: root.size
+        TopMenu:
+            size_hint: 0.1,1
+        Image:
+            size_hint: 0.9,1
+            source: "img/logo.png"
