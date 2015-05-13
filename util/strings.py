@@ -8,6 +8,7 @@ mainmenu = "mainmenu"
 back = "back"
 changelanguage = "changelanguage"
 language = "language"
+empty = ""
 
 german = "German"
 english = "English"

@@ -4,23 +4,23 @@ from util import strings
 class LanguageManager():
     Current = ""
 
-    def Set(app,language, name):
+    def Set(language, name):
         language.install()
         current = name
         util.Logger.info("LanguageManager:Language set to "+name)
-        app.ScreenManager.requestUpdate()
+        #root.ScreenManager.requestUpdate()
 
-    def TrySet(app, languageName):
+    def TrySet(caller,languageName):
         util.Logger.info("LanguageManager:Attempting to set Language to "+languageName)
-        LanguageManager.mappings[languageName](app)
-
-    def SetEN(app):
+        LanguageManager.mappings[languageName]()
+    
+    def SetEN():
         en = gettext.translation("en",localedir="locale",languages=["en"])
-        LanguageManager.Set(app,en,strings.english)
+        LanguageManager.Set(en,strings.english)
 
-    def SetDE(app):
+    def SetDE():
         de = gettext.translation("de",localedir="locale",languages=["de"])
-        LanguageManager.Set(app,de,strings.german)
+        LanguageManager.Set(de,strings.german)
 
     mappings = {
         strings.german:SetDE,

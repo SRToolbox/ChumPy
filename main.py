@@ -3,6 +3,7 @@ import kivy
 kivy.require("1.9.0")
 import util
 from util.languagemanager import LanguageManager
+from util.screenmanager import ScreenManager
 from kivy import platform
 from kivy.app import App
 from kivy.uix.widget import Widget
@@ -10,10 +11,8 @@ import gui
 from gui.mainmenu import MainMenu
 from gui.about import About
 from gui.eventhandler import ButtonHandler
-from gui.screenmanager import ScreenManager
 
 class ChumPyApp(App):
-    _ = ObjectProperty(None, allownone = True)
     ScreenManager = ScreenManager()
     LanguageManager = LanguageManager()
 
@@ -26,7 +25,7 @@ class ChumPyApp(App):
         ScreenManager.switchTo(util.strings.mainmenu)
 
     def build(self):
-        LanguageManager.SetEN(self)
+        LanguageManager.SetEN()
         self.initializeScreenManager()
         return ScreenManager.getManager()
 
