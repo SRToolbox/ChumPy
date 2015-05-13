@@ -7,3 +7,7 @@ about = "about"
 mainmenu = "mainmenu"
 back = "back"
 changelanguage = "changelanguage"
+language = "language"
+
+german = "German"
+english = "English"

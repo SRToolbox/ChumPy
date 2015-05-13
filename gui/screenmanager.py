@@ -8,8 +8,19 @@ class ScreenManager():
         ScreenManager.manager.add_widget(screen)
 
     @staticmethod
+    def requestUpdate():
+        ScreenManager.manager.current.canvas.ask_update()
+
+    @staticmethod
+    def setSlideRight():
+        ScreenManager.manager.transition = uix.screenmanager.SlideTransition(direction="right")
+
+    @staticmethod
+    def setSlideLeft():
+        ScreenManager.manager.transition = uix.screenmanager.SlideTransition(direction="left")
+
+    @staticmethod
     def switchTo(screenName):
-        gui.Logger.info("ScreenManager:Switched to "+screenName)
         ScreenManager.last = ScreenManager.manager.current
         ScreenManager.manager.current = screenName
 

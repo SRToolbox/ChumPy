@@ -1,31 +1,37 @@
 import util
-from gui import strings
+from util import strings
 from kivy.logger import Logger
 class ButtonHandler:
-    def buttonPressed(app, origin, button):
-        ButtonHandler.mappings[button](app)
+    def buttonPressed(app, origin, button, *args):
+        ButtonHandler.mappings[button](app,*args)
         pass
 
-    def CreateButtonPressed(app):
+    def CreateButtonPressed(app,*args):
         pass
 
-    def MaintainButtonPressed(app):
+    def MaintainButtonPressed(app,*args):
         pass
 
-    def PlayButtonPressed(app):
+    def PlayButtonPressed(app,*args):
         pass
 
-    def GameMasterButtonPressed(app):
+    def GameMasterButtonPressed(app,*args):
         pass
 
-    def ToolsButtonPressed(app):
+    def ToolsButtonPressed(app,*args):
         pass
 
-    def AboutButtonPressed(app):
+    def AboutButtonPressed(app,*args):
+        app.ScreenManager.setSlideLeft()
         app.ScreenManager.switchTo(strings.about)
 
-    def BackButtonPressed(app):
+    def BackButtonPressed(app,*args):
+        app.ScreenManager.setSlideRight()
         app.ScreenManager.switchToLast()
+
+    def ChangeLanguagePressed(app,*args):
+        language = args[0]
+        app.LanguageManager.TrySet(language)
 
     mappings = {
         strings.create:CreateButtonPressed,
@@ -35,4 +41,5 @@ class ButtonHandler:
         strings.tools:ToolsButtonPressed,
         strings.about:AboutButtonPressed,
         strings.back:BackButtonPressed,
+        strings.changelanguage:ChangeLanguagePressed,
     }

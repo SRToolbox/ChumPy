@@ -1,39 +1,40 @@
-#:import strings gui.strings
-<SideMenuButton@Button>:
+#:import strings util.strings
+<MainMenuSideMenuButton@Button>:
     on_press: app.buttonPressed(strings.mainmenu,self.tag)
-<CreateButton@SideMenuButton>:
+<MainMenuCreateButton@MainMenuSideMenuButton>:
     tag: strings.create
     text: _("Create")
-<MaintainButton@SideMenuButton>:
+<MainMenuMaintainButton@MainMenuSideMenuButton>:
     tag: strings.maintain
     text: _("Maintain")
-<PlayButton@SideMenuButton>:
+<MainMenuPlayButton@MainMenuSideMenuButton>:
     tag: strings.play
     text: _("Play")
-<GMButton@SideMenuButton>:
+<MainMenuGMButton@MainMenuSideMenuButton>:
     tag: strings.gamemaster
     text: _("GameMaster")
-<ToolsButton@SideMenuButton>:
+<MainMenuToolsButton@MainMenuSideMenuButton>:
     tag: strings.tools
     text: _("Tools")
-<AboutButton@SideMenuButton>:
+<MainMenuAboutButton@MainMenuSideMenuButton>:
     tag: strings.about
     text: _("About")
-<SideMenu@BoxLayout>:
+<MainMenuSideMenu@BoxLayout>:
     BoxLayout:
         orientation: "vertical"
-        CreateButton:
-        MaintainButton:
-        PlayButton:
-        GMButton:
-        ToolsButton:
-        AboutButton:
+        MainMenuCreateButton:
+        MainMenuMaintainButton:
+        MainMenuPlayButton:
+        MainMenuGMButton:
+        MainMenuToolsButton:
+        MainMenuAboutButton:
 
 <MainMenu>:
     BoxLayout:
         pos: root.pos
         size: root.size
-        SideMenu:
+        orientation: "horizontal"
+        MainMenuSideMenu:
             size_hint: 0.3,1
         Image:
             size_hint: 0.7,1

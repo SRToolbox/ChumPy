@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-05-06 13:00+0100\n"
-"PO-Revision-Date: 2015-05-06 13:02+0100\n"
+"POT-Creation-Date: 2015-05-13 11:06+0100\n"
+"PO-Revision-Date: 2015-05-13 11:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,26 +15,34 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: Kivy\n"
 
-#: gui/mainmenu.kv:4
+#: gui/about.kv:6
+msgid "Back"
+msgstr "Zurück"
+
+#: gui/about.kv:9
+msgid "ChangeLanguage"
+msgstr "Sprache Ändern"
+
+#: gui/about.kv:19 gui/mainmenu.kv:21
+msgid "About"
+msgstr "Über"
+
+#: gui/mainmenu.kv:6
 msgid "Create"
 msgstr "Erstellen"
 
-#: gui/mainmenu.kv:6
+#: gui/mainmenu.kv:9
 msgid "Maintain"
 msgstr "Verwalten"
 
-#: gui/mainmenu.kv:8
+#: gui/mainmenu.kv:12
 msgid "Play"
 msgstr "Spielen"
 
-#: gui/mainmenu.kv:10
+#: gui/mainmenu.kv:15
 msgid "GameMaster"
 msgstr "Spielleiter"
 
-#: gui/mainmenu.kv:12
+#: gui/mainmenu.kv:18
 msgid "Tools"
 msgstr "Werkzeuge"
-
-#: gui/mainmenu.kv:14
-msgid "About"
-msgstr "Über"

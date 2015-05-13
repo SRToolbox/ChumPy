@@ -1,25 +1,46 @@
-#:import strings gui.strings
+#:import strings util.strings
 <AboutMenuButton@Button>:
     on_press: app.buttonPressed(strings.about,self.tag)
-<BackButton@AboutMenuButton>:
+<AboutBackButton@AboutMenuButton>:
     tag: strings.back
     text: _("Back")
-<ChangeLanguageButton@AboutMenuButton>:
-    tag: string.changeLanguage
+<AboutChangeLanguageButton@Button>:
+    on_press: app.buttonPressed(strings.about,self.tag,self.language)
+    tag: strings.changelanguage
     text: _("ChangeLanguage")
 
-<TopMenu@BoxLayout>:
+<AboutTopMenu@BoxLayout>:
     BoxLayout:
         orientation: "horizontal"
-        BackButton:
-            size_hint: 0.3,1
+        AboutBackButton:
+            size_hint: 0.1,1
+        Label:
+            size_hint: 0.9,1
+            halign: "center"
+            text: _("About")
 
+<AboutMainMenu@BoxLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1,0.1
+            orientation: "horizontal"
+            Spinner:
+                id: spinner
+                halign: "center"
+                tag: strings.language
+                text: app.LanguageManager.Current
+                values: {strings.german,strings.english}
+            AboutChangeLanguageButton:
+                language: spinner.text
+        Image:
 <About>:
     BoxLayout:
         pos: root.pos
         size: root.size
-        TopMenu:
-            size_hint: 0.1,1
-        Image:
-            size_hint: 0.9,1
+        orientation: "vertical"
+        AboutTopMenu:
+            size_hint: 1,0.1
+        AboutMainMenu:
+            size_hint: 1,0.9
             source: "img/logo.png"
