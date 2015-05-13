@@ -12,3 +12,5 @@ empty = ""
 
 german = "German"
 english = "English"
+
+setting_currentLanguage = "CurrentLanguage"
